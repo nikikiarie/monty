@@ -5,7 +5,7 @@
  * @count: line number
  * Return: NULL
  */
-void push_mty(stack_n **head, unsigned int count)
+void push_mty(stack_t **head, unsigned int count)
 {
 	int a, f = 0, i = 0;
 

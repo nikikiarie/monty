@@ -3,9 +3,9 @@
  * st_free - frees linked list
  * @head: head
  */
-void st_free(stack_n *head)
+void st_free(stack_t *head)
 {
-	stack_n *z;
+	stack_t *z;
 
 	z = head;
 	while (head)

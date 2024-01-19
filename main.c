@@ -9,12 +9,10 @@ bus b = {NULL, NULL, NULL, 0};
  */
 int main(int argc, char *argv[])
 {
-	char *line;
+	char line[128];
 	FILE *file;
-	ssize_t r_line = 1;
 	unsigned int count = 0;
-	size_t s = 0;
-	stack_n *stack = NULL;
+	stack_t *stack = NULL;
 
 	if (argc != 2)
 	{
@@ -28,17 +26,11 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (r_line > 0)
+	while (fgets(line, sizeof(line), file) != NULL)
 	{
-		line = NULL;
-		r_line = getline(&line, &s, file);
 		b.line = line;
 		count++;
-		if (r_line > 0)
-		{
-			mty_exe(line, &stack, count, file);
-		}
-		free(line);
+		mty_exe(line, &stack, count, file);
 	}
 	st_free(stack);
 	fclose(file);

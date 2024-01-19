@@ -7,9 +7,9 @@
  * @line: line
  * Return: 1
  */
-int mty_exe(char *line, stack_n **stack, unsigned int count, FILE *file)
+int mty_exe(char *line, stack_t **stack, unsigned int count, FILE *file)
 {
-	instruct inst_o[] = {
+	instruction_t inst_o[] = {
 		{"push", push_mty}};
        /**	{"pall", pall_mty}, {"pint", pint_mty}
 	*	, {"pop", pop_mty}, {"swap", swap_mty}, {"add", add_mty},
@@ -25,16 +25,16 @@ int mty_exe(char *line, stack_n **stack, unsigned int count, FILE *file)
 	if (tkn && tkn[0] == '#')
 	return (0);
 	b.arg = strtok(NULL, " \n\t");
-	while (inst_o[i].op && tkn)
+	while (inst_o[i].opcode && tkn)
 	{
-		if (strcmp(tkn, inst_o[i].op) == 0)
+		if (strcmp(tkn, inst_o[i].opcode) == 0)
 		{
-			inst_o[i].h(stack, count);
+			inst_o[i].f(stack, count);
 			return (0);
 		}
 		i++;
 	}
-	if (tkn && inst_o[i].op == NULL)
+	if (tkn && inst_o[i].opcode== NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", count, tkn);
 		fclose(file);

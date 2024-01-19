@@ -5,12 +5,12 @@
  * @i: new valu
  * Return: null
  */
-void nodeplus(stack **head, int i)
+void nodeplus(stack_t **head, int i)
 {
-	stack_n new, a;
+	stack_t *new, *a;
 
 	a = *head;
-	new = malloc(sizeof(stack_n));
+	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
 		printf("Error\n");
@@ -18,7 +18,7 @@ void nodeplus(stack **head, int i)
 	}
 	if (a)
 		a->prev = new;
-	new->t = i;
+	new->n = i;
 	new->next = *head;
 	new->prev = NULL;
 	*head = new;

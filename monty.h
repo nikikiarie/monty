@@ -55,4 +55,5 @@ void queueplus(stack_t **head, int i);
 
 void pall_mty(stack_t **head, unsigned int count);
 void push_mty(stack_t **head, unsigned int count);
+void pint_mty(stack_t **head, unsigned int count);
 #endif

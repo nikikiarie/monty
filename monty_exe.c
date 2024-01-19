@@ -1,4 +1,4 @@
-#include "mty.h"
+#include "monty.h"
 /**
  * mty_exe - executes opcode
  * @stack: head linked list

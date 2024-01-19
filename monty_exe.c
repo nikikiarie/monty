@@ -10,7 +10,7 @@
 int mty_exe(char *line, stack_t **stack, unsigned int count, FILE *file)
 {
 	instruction_t inst_o[] = {
-		{"push", push_mty}};
+		{"push", push_mty}, {"pall", pall_mty}};
        /**	{"pall", pall_mty}, {"pint", pint_mty}
 	*	, {"pop", pop_mty}, {"swap", swap_mty}, {"add", add_mty},
 	*	{"nop", nop_mty}, {"sub", sub_mty}, {"div", div_mty},

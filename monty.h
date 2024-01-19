@@ -52,5 +52,7 @@ int mty_exe(char *line, stack_t **stack, unsigned int count, FILE *file);
 void st_free(stack_t *head);
 void nodeplus(stack_t **head, int i);
 void queueplus(stack_t **head, int i);
+
+void pall_mty(stack_t **head, unsigned int count);
 void push_mty(stack_t **head, unsigned int count);
 #endif
